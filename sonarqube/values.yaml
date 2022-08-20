@@ -49,7 +49,7 @@ elasticsearch:
   bootstrapChecks: true
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   externalPort: 9000
   internalPort: 9000
   labels:
@@ -376,7 +376,7 @@ jdbcOverwrite:
   #jdbc:postgresql://<hostname or IP address>[:<port>]/<database>
   # public ip  = 104.198.60.170 default port = 5432
   #  #jdbc:postgresql://104.198.60.170:5432/sonarDB
-  jdbcUrl: "jdbc:postgresql://myPostgress/myDatabase?socketTimeout=1500"
+  jdbcUrl: "jdbc:postgresql://104.198.60.170:5432/sonarDB?socketTimeout=1500"
   # The DB user that should be used for the JDBC connection
   jdbcUsername: "sonarUser"
   # Use this if you don't mind the DB password getting stored in plain text within the values file
